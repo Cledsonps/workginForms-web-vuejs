@@ -21,7 +21,12 @@ const handlingForms = {
     },
     methods:{
         addMember: function(){
-            this.members.push(this.newMember);
+            if(this.newMember && this.lname && this.instrument){
+                this.members.push(this.newMember);
+                this.newMember = {};
+            }else{
+                alert("Todos os campos precisam estar preenchidos.");
+            }
         }
     }
 
